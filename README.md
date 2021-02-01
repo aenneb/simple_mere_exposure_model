@@ -14,8 +14,10 @@ Current simplifying assumptions:
 - covariance matrices are: stable, symmetric, contain equal variances for both features, and have 0 covariance
 - learning rate is stable
 
+ 
+---
 
-
+ 
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
 This work is licensed under a
