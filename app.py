@@ -377,7 +377,7 @@ def update_message(mu_0_1, mu_0_2, mu_true_1, mu_true_2, mu_stim_1, mu_stim_2,
             f' and presented for {stim_dur} time steps.' +'\n' +
             f'The true distribution has means {mu_true_1} and {mu_true_2}.' +
             f' and a variance of {var_true}.' +'\n' +
-            'The learning rate is set to' + '{:.2e}'.format(alpha) + 
+            'The learning rate is set to ' + '{:.2e}'.format(alpha) + 
             ' and the weight of Delta-V' + f' to {w_V}.')
 
 ############ Execute the app
