@@ -7,10 +7,6 @@ Created on Thu Jan 28 13:53:09 2021
 
 initial round of trying to develop an interactive html page for exploring the 
 model parameter space
-
-nice example:
-https://github.com/austinlasseter/knn_iris_plotly/blob/master/app.py
-
 """
 
 import os
@@ -19,9 +15,8 @@ import numpy as np
 import pandas as pd
 
 # import costum functions
-os.chdir('..')
 home_dir = os.getcwd()
-sys.path.append((home_dir + "/python_packages"))
+sys.path.append(home_dir)
 from aestheticsModel import simSetup
 
 # %% set up dash and plotly
