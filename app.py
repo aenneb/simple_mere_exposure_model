@@ -336,15 +336,19 @@ def update_contour_graphs(mu_0_1, mu_0_2, var_X, mu_true_1, mu_true_2, var_true,
                         vertical_spacing=0.02)
     fig.add_trace(go.Contour(x=x, y=y, z=z_state, contours_coloring='lines',
                                                line_width=5, showscale = False,
-                                               colorscale='Blues',), 1,1)
+                                               colorscale='Blues',), 
+                  row=1, col=1)
     fig.add_trace(go.Scatter(x=[mu_stim_1], y = [mu_stim_2], mode='markers',
-                    name='Stimulus', marker=dict(size=10), fillcolor='orange'), 1,2)
+                    name='Stimulus', marker=dict(size=10, color='orange')), 
+                  row=1, col=1)
     
     fig.add_trace(go.Contour(x=x, y=y, z=z_true, contours_coloring='lines',
                                                line_width=5, showscale = False,
-                                               colorscale='Blues',), 1,2)
+                                               colorscale='Blues',),
+                  row=1, col=2)
     fig.add_trace(go.Scatter(x=[mu_stim_1], y = [mu_stim_2], mode='markers',
-                    name='Stimulus', marker=dict(size=10), fillcolor='orange'), 1,1)
+                    marker=dict(size=10, color='orange'), showlegend=False), 
+                  row=1, col=2)
     
     fig.update_yaxes(scaleanchor = "x", scaleratio = 1,)
     
