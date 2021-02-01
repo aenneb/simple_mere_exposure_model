@@ -8,7 +8,6 @@ Created on Mon Sep  7 18:52:18 2020
 collection of helper functions
 """
 import numpy as np
-from statsmodels.stats.correlation_tools import cov_nearest # for esnuring cov
 
 def mahalanobis(stim, mu_x, cov):
     """
