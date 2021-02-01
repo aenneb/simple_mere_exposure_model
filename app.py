@@ -72,7 +72,10 @@ def get_time_series(mu_0_1, mu_0_2, var_X,
                                             mu_stim_1, mu_stim_2, alpha, w_V)
         A_t_list.append(A_t)
         r_t_list.append(r_t)
-        delta_V_list.append((A_t - r_t)/w_V)
+        if w_V > 0:
+            delta_V_list.append((A_t - r_t)/w_V)
+        else:
+            delta_V_list.append(A_t - r_t)
         
     return A_t_list, r_t_list, delta_V_list
 
