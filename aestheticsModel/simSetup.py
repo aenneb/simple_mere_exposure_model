@@ -11,9 +11,6 @@ model of aesthetic value that replicate existing empirical findings
 import os
 import sys
 import numpy as np
-from scipy.stats import multivariate_normal
-from sklearn.covariance import EmpiricalCovariance
-from sklearn.datasets import make_spd_matrix
 
 # import costum functions
 os.chdir('..')
