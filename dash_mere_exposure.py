@@ -368,31 +368,6 @@ def update_message(mu_0_1, mu_0_2, mu_true_1, mu_true_2, mu_stim_1, mu_stim_2,
             'The learning rate is set to' + '{:.2e}'.format(alpha) + 
             ' and the weight of Delta-V' + f' to {w_V}.')
 
-    
-
-# %% coda
+############ Execute the app
 if __name__ == '__main__':
-    # For Development only, otherwise use gunicorn or uwsgi to launch, e.g.
-    # gunicorn -b 0.0.0.0:8050 index:app.server
-    app.run_server(
-        port=8050,
-        host='0.0.0.0'
-    )
-    
-# %% little helpers for debugging
-# mu_0_1=0.1
-# mu_0_2=0.1
-# var_X=1
-# mu_true_1=0.2
-# mu_true_2=0.3
-# var_true=1
-# mu_stim_1=0.1
-# mu_stim_2=0.2
-# alpha=0.001
-# stim_dur=10
-# n_reps=50
-
-# A_t_list = get_time_series(mu_0_1, mu_0_2, var_X, 
-#                                 mu_true_1, mu_true_2, var_true,
-#                                 mu_stim_1, mu_stim_2,
-#                                 alpha, stim_dur, n_reps)
+    app.run_server()
