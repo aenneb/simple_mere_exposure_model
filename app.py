@@ -119,7 +119,7 @@ app.layout = html.Div([
                 min=-10,
                 max=10,
                 value= 0, # np.round(np.random.rand(),1),
-                # marks={str(mu): str(mu) for mu in np.arange(-1,1,.1)},
+                marks={str(mu): str(mu) for mu in np.arange(-10,11,5)},
                 step=0.1
             ),
             html.P('system state mean 2'),
@@ -128,7 +128,7 @@ app.layout = html.Div([
                 min=-10,
                 max=10,
                 value=0, #np.round(np.random.rand(),1),
-                # marks={str(mu): str(mu) for mu in np.arange(-1,1,.1)},
+                marks={str(mu): str(mu) for mu in np.arange(-10,11,5)},
                 step=0.1
             ),
             html.P('system state variance'),
@@ -137,7 +137,7 @@ app.layout = html.Div([
                 min=.1,
                 max=10,
                 value=1.04,
-                # marks={str(mu): str(mu) for mu in np.arange(.01,10,.1)},
+                marks={str(var): str(var) for var in [0.1, 1, 5, 10]},
                 step=0.1
             ),
         ], className = 'three columns'),
@@ -150,7 +150,7 @@ app.layout = html.Div([
                 min=-10,
                 max=10,
                 value=4.81, #np.round(np.random.rand(),1),
-                # marks={str(mu): str(mu) for mu in np.arange(-1,1,.1)},
+                marks={str(mu): str(mu) for mu in np.arange(-10,11,5)},
                 step=0.1
             ),
             html.P('expected true mean 2'),
@@ -159,7 +159,7 @@ app.layout = html.Div([
                 min=-10,
                 max=10,
                 value=16.7, #np.round(np.random.rand(),1),
-                # marks={str(mu): str(mu) for mu in np.arange(-1,1,.1)},
+                marks={str(mu): str(mu) for mu in np.arange(-10,11,5)},
                 step=0.1
             ),
             html.P('true distribution variance'),
@@ -168,7 +168,7 @@ app.layout = html.Div([
                 min=.1,
                 max=10,
                 value=0.47,
-                # marks={str(mu): str(mu) for mu in np.arange(.01,10,.1)},
+                marks={str(var): str(var) for var in [0.1, 1, 5, 10]},
                 step=0.1
             ),
         ], className = 'three columns'),
@@ -181,7 +181,7 @@ app.layout = html.Div([
                 min=-10,
                 max=10,
                 value=-0.17, #np.round(np.random.rand(),1),
-                # marks={str(mu): str(mu) for mu in np.arange(-1,1,.1)},
+                marks={str(mu): str(mu) for mu in np.arange(-10,11,5)},
                 step=0.1
             ),
             html.P('stimulus mean 2'),
@@ -190,7 +190,7 @@ app.layout = html.Div([
                 min=-10,
                 max=10,
                 value=1.06, #np.round(np.random.rand(),1),
-                # marks={str(mu): str(mu) for mu in np.arange(-1,1,.1)},
+                marks={str(mu): str(mu) for mu in np.arange(-10,11,5)},
                 step=0.1
             ),
             html.P('stimulus duration'),
@@ -198,6 +198,7 @@ app.layout = html.Div([
                 id='slider-stim_dur',
                 min=1,
                 max=100,
+                marks={str(s): str(s) for s in [1, 25, 50, 75, 100]},
                 value=33,
                 step=1
             ),
@@ -211,6 +212,8 @@ app.layout = html.Div([
                 min=0,
                 max=10,
                 value=-np.log10(0.0005),
+                # note below we need float 10.0 bc np does not raise int to negative int
+                marks={str(a): '{:.0e}'.format(10.0**(-a)) for a in np.arange(0,11,2)},
                 step=.25
             ),
             html.P('weight of Delta-V'),
@@ -219,6 +222,7 @@ app.layout = html.Div([
                 min=0,
                 max=100,
                 value=32,
+                marks={str(w): str(w) for w in np.arange(0,101,20)},
                 step=1
             ),
             html.P('max # repetitions'),
@@ -227,6 +231,7 @@ app.layout = html.Div([
                 min=1,
                 max=100,
                 value=50,
+                marks={str(s): str(s) for s in [1, 25, 50, 75, 100]},
                 step=1
             ),
         ], className = 'three columns'),
