@@ -2,7 +2,7 @@
 
 This repository contains a small Python app to illustrate how a simple model of aesthetic value (Brielmann & Dayan, in prep.) can account for mere exposure effects.
 
-You can see it in action (here)[https://simple-mere-exposure-model.herokuapp.com/]
+You can see it in action [here](https://simple-mere-exposure-model.herokuapp.com/)
 
 The current app lets you choose from a (somewhat) restricted range of parameter values and displays predicted aesthetic value over a given range of repetitions of the same (average) stimulus. 
 
