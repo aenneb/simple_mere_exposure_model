@@ -288,9 +288,11 @@ def update_line_graphs(mu_0_1, mu_0_2, var_X, mu_true_1, mu_true_2, var_true,
                                                   mu_true_1, mu_true_2, var_true,
                                                   mu_stim_1, mu_stim_2,
                                                   alpha, w_V, stim_dur, n_reps)
+    delta_V_weighted = np.array(delta_V_list)*w_V
     df = pd.DataFrame({"A(t)": A_t_list,
                        'r(t)': r_t_list,
                        'Delta-V(t)': delta_V_list,
+                       'w_V_Delta-V(t)': delta_V_weighted,
                        "Repetition number": np.arange(1,n_reps+1)})
     
     fig = make_subplots(rows=1, cols=2,
@@ -302,6 +304,9 @@ def update_line_graphs(mu_0_1, mu_0_2, var_X, mu_true_1, mu_true_2, var_true,
                   row=1, col=1)
     fig.add_trace(go.Scatter(x=df['Repetition number'], y=df["r(t)"],
                           mode='lines', name='r(t)'),
+                  row=1, col=2)
+    fig.add_trace(go.Scatter(x=df['Repetition number'], y=df["w_V_Delta-V(t)"],
+                          mode='lines', name='weighted Delta-V(t)'),
                   row=1, col=2)
     fig.add_trace(go.Scatter(x=df['Repetition number'], y=df["Delta-V(t)"],
                           mode='lines', name='Delta-V(t)'),
